@@ -36,16 +36,32 @@ const dinnerArray = [
     'curry'
 ];
 
+const menu = {
+    breakfast: '',
+    lunch: '',
+    dinner: '',
+}
+
 const selectMeal = mealArray => {
     return mealArray[Math.floor(Math.random() * mealArray.length)];
 };
 
-const menu = {
-    breakfast: selectMeal(breakfastArray),
-    lunch: selectMeal(lunchArray),
-    dinner: selectMeal(dinnerArray)
+const displayMenu = menu => {
+    console.log(`
+    Your menu for today:
+    Breakfast: ${menu.breakfast}
+    Lunch: ${menu.lunch}
+    Dinner: ${menu.dinner}
+    Bone Apple Tea!`)
+
 };
 
-console.log(menu.breakfast);
-console.log(menu.lunch);
-console.log(menu.dinner);
+const generateMenu = menu => {
+    menu.breakfast = selectMeal(breakfastArray);
+    menu.lunch = selectMeal(lunchArray);
+    menu.dinner = selectMeal(dinnerArray);
+
+    displayMenu(menu);
+};
+
+generateMenu(menu);
