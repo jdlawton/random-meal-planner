@@ -1,4 +1,3 @@
-console.log("Hello World");
 
 const breakfastArray = [
     'bacon and eggs',
@@ -26,7 +25,7 @@ const lunchArray = [
 ];
 const dinnerArray = [
     'pot roast',
-    'fried chicken',
+    'spaghetti and meatballs',
     'grilled salmon',
     'roast chicken',
     'pizza',
@@ -37,3 +36,16 @@ const dinnerArray = [
     'curry'
 ];
 
+const selectMeal = mealArray => {
+    return mealArray[Math.floor(Math.random() * mealArray.length)];
+};
+
+const menu = {
+    breakfast: selectMeal(breakfastArray),
+    lunch: selectMeal(lunchArray),
+    dinner: selectMeal(dinnerArray)
+};
+
+console.log(menu.breakfast);
+console.log(menu.lunch);
+console.log(menu.dinner);
